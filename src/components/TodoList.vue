@@ -18,7 +18,7 @@ export default {
     await this.getTodo();
   },
   methods: {
-    ...mapActions(["deleteTodo", "editTodo", "getTodo"]),
+    ...mapActions(["getTodo"]),
   },
 };
 </script>

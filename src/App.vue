@@ -1,32 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div id="app" class="container">
+    <todo-header />
+    <todo-input />
+    <todo-list />
   </div>
 </template>
 
+<script>
+import TodoHeader from "./components/TodoHeader.vue";
+import TodoInput from "./components/TodoInput.vue";
+import TodoList from "./components/TodoList.vue";
+export default {
+  components: { TodoHeader, TodoInput, TodoList },
+};
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  margin-top: 30px;
+  background-color: #f1f2f6;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+}
+.container {
+  max-width: 800px !important;
+}
+input {
+  border: 2px solid;
+  border-radius: 5px;
+  border-color: #86b7fe !important;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(13 110 253 / 25%);
 }
 </style>
